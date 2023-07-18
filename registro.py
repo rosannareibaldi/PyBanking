@@ -2,7 +2,7 @@ import getpass
 import random
 import string
 
-def genera_password(lunghezza):
+def generaPassword(lunghezza):
     """ Genera una password della lunghezza richiesta, prendendo randomicamente caratteri tra lettere, numeri e punteggiatura.
 
     Args:
@@ -32,12 +32,12 @@ class Utente:
         Aggiorna l'oggetto della classe Utente inserendo utente e password
         """
         self.utente = numero_utenti + 1
-        self.__password = genera_password(8)
+        self.__password = generaPassword(8)
     
     def deposita(self,deposito):
         self.saldo += deposito
 
-    def prelieva(self,prelievo):
+    def preleva(self,prelievo):
         self.saldo -= prelievo
 
 
