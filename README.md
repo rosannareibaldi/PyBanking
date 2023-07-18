@@ -4,10 +4,10 @@
 ### Indentazione e formattazione
 Inserire righe vuote:
 
- - in caso di due blocchi di codice differenti verranno lasciate tre righe vuote tra la fine del primo blocco ed il commento posto prima del blocco successivo;
- - all'interno dello stesso blocco di codice, a discrezione dell'utente, verrà inserita una riga vuota al fine di migliorare la leggibilità delle istruzioni per il controllo di flusso.
+ - In caso di due blocchi di codice differenti verranno lasciate tre righe vuote tra la fine del primo blocco ed l'eventuale commento posto prima del blocco successivo;
+ - All'interno dello stesso blocco di codice, a discrezione dell'utente, potrà essere inserita una riga vuota al fine di migliorare la leggibilità delle istruzioni per il controllo di flusso.
 
-Indentazione standard di Python.
+Durante l'intero rpogetto verrà  rispettata l'identazione python tramite singola tabulazione.
 
 ### Nomenclatura
 
@@ -32,7 +32,7 @@ Indentazione standard di Python.
 >      return z_score
 >      print(standardize.__doc__)
 
- - Prima di ogni blocco di codice inserire un commento che ne spieghi il funzionamento;
+ - Prima di ogni blocco di codice verrà inserito un commento che ne spieghi il funzionamento;
  - All'interno dei blocchi l'inserimento dei commenti è a discrezione dell'utente.
 
 ### Organizzazione dei files
