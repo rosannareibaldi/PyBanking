@@ -47,7 +47,7 @@ class Utente:
         """
         self.utente = numero_utenti + 1
         self.registro[0][0]= self.utente
-        self.__password = generaPassword(8)
+        self.__password = generaPassword(5)
         print(f"Registrato!\n Utente: {self.utente}\n Password: {self.__password}\n")
     
     def deposita(self, deposito):
@@ -61,10 +61,10 @@ class Utente:
         self.saldo += deposito
         self.registro.append([self.utente, datetime.datetime.now(), "deposito", deposito, self.saldo])
         print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
-
+        
     def preleva(self, prelievo):
         """
-        Aggiorna il saldo prelevando la somma richiesta e aggiorna il registro delle operazioni
+        Aggiorna il saldo prelevando la somma richiesta, aggiorna il registro delle operazioni
         e stampa il messaggio di operazione riuscita
 
         Args:
@@ -72,6 +72,30 @@ class Utente:
         """
         self.saldo -= prelievo
         self.registro.append([self.utente, datetime.datetime.now(), "prelievo", - prelievo, self.saldo])
+        print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
+
+    def ricevi(self, somma):
+        """
+        Aggiorna il saldo ricevendo la somma trasferita, aggiorna il registro delle operazioni 
+        e stampa il messaggio di operazione riuscita
+
+        Args:
+            somma (int) : somma di denaro che si deve ricevere
+        """
+        self.saldo += somma
+        self.registro.append([self.utente, datetime.datetime.now(), "ricevimento", somma, self.saldo])
+        print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
+    
+    def trasferisci(self, somma):
+        """
+        Aggiorna il saldo prelevando la somma richiesta, aggiorna il registro delle operazioni
+        e stampa il messaggio di operazione riuscita
+
+        Args:
+            somma (int) : somma di denaro che si vuole trasferire
+        """
+        self.saldo -= somma
+        self.registro.append([self.utente, datetime.datetime.now(), "trasferimento", - somma, self.saldo])
         print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
 
     def stampaReport(self):
@@ -83,6 +107,7 @@ class Utente:
 
 # Creazione lista Utenti
 lista_utenti = [] 
+
 # Utente 1
 data_nascita1 = datetime.date(1998, 12, 2)
 utente1 = Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192)
