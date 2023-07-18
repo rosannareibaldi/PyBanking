@@ -2,7 +2,6 @@ import random
 import string
 import datetime
 
-
 def generaPassword(lunghezza):
     """ Genera una password della lunghezza richiesta, prendendo randomicamente caratteri tra lettere, numeri e punteggiatura.
 
@@ -49,7 +48,7 @@ class Utente:
         self.utente = numero_utenti + 1
         self.registro[0][0]= self.utente
         self.__password = generaPassword(8)
-        print(f"Registrato!\n Utente: {self.utente}\n Password: {self.__password}")
+        print(f"Registrato!\n Utente: {self.utente}\n Password: {self.__password}\n")
     
     def deposita(self, deposito):
         """
@@ -76,22 +75,41 @@ class Utente:
         print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
 
     def stampaReport(self):
+        print(f"SALDO ATTUALE: {self.saldo}€\n")
         print("OPERAZIONI EFFETTUATE:\n")
         for riga in self.registro:
             data_str = riga[1].strftime("%d/%m/%Y")
             print(f"Data: {data_str}, Operazione: {riga[2]} di {riga[3]}€, Saldo: {riga[4]}€ \n")
 
+# Creazione lista Utenti
+lista_utenti = [] 
+# Utente 1
 data_nascita1 = datetime.date(1998, 12, 2)
-
-utente1 = Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192 )
-utente1.creaCredenziali(0)
+utente1 = Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192)
+utente1.creaCredenziali(len(lista_utenti))
 utente1.deposita(1000)
 utente1.preleva(50)
 utente1.deposita(20)
 utente1.preleva(200)
-utente1.stampaReport()
-print(utente1.registro)
-#print(utente1.registro)
+
+lista_utenti.append(utente1)
+
+# Utente 2
+data_nascita2 = datetime.date(1994, 10, 23)
+data_creazione2 = datetime.date(2020, 6, 9)
+utente2 = Utente("Rosanna", "Reibaldi", data_nascita2, "via rosa", 37507872910, 2500, [[0, data_creazione2, "creazione conto", 2500, 2500]])
+utente2.creaCredenziali(len(lista_utenti))
+lista_utenti.append(utente2)
+
+# Utente 3
+data_nascita3 = datetime.date(1997, 4, 12)
+data_creazione3 = datetime.date(2023, 3, 21)
+utente3 = Utente("Leonardo", "Brunetti", data_nascita3, "via tal dei tali", 3240432570, 5000, [[0, data_creazione3, "creazione conto", 5000, 5000]])
+utente3.creaCredenziali(len(lista_utenti))
+lista_utenti.append(utente3)
+
+
+
 
 
 
