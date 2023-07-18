@@ -34,3 +34,7 @@ Indentazione standard di Python.
 
  - Prima di ogni blocco di codice inserire un commento che ne spieghi il funzionamento;
  - All'interno dei blocchi l'inserimento dei commenti è a discrezione dell'utente.
+
+### Organizzazione dei files
+
+ - Funzioni e classi verranno definite in files separati ed eventualmente raggruppate tra loro, a discrezione dell'utente
