@@ -50,6 +50,12 @@ class Utente:
         self.__password = generaPassword(5)
         print(f"Registrato!\n Utente: {self.utente}\n Password: {self.__password}\n")
     
+    def passwordCorretta(self, password_inserita):
+        if self.__password == password_inserita:
+            return True
+        else:
+            return False
+    
     def deposita(self, deposito):
         """
         Aggiorna il saldo depositando la somma richiesta, aggiorna il registro delle operazioni 
