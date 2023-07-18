@@ -7,7 +7,8 @@ Inserire righe vuote:
  - In caso di due blocchi di codice differenti verranno lasciate tre righe vuote tra la fine del primo blocco ed l'eventuale commento posto prima del blocco successivo;
  - All'interno dello stesso blocco di codice, a discrezione dell'utente, potrà essere inserita una riga vuota al fine di migliorare la leggibilità delle istruzioni per il controllo di flusso.
 
-Durante l'intero rpogetto verrà  rispettata l'identazione python tramite singola tabulazione.
+Durante l'intero progetto verrà  rispettata l'identazione python tramite singola tabulazione. Inoltre, verranno utilizzati spazi bianchi tra gli operatori e dopo
+le virgole per separare i parametri nelle funzioni.
 
 ### Nomenclatura
 
