@@ -179,7 +179,7 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
-## Manipolazione delle classi e creazione dei dataframe
+## file manipolazione.py 
 
 Al fine di agevolare l'analisi dei dati immagazzinati nella classe utente si è proseguito alla creazione di Dataframe Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 La creazione del registro dei movimenti ha necessitato, partendo dalla lista_utenti precedentemente definita, la creazione di una lista di dataframes contenente le informazioni racchiuse nel registro. Successivamente definendo la funzione concat_dataframes si è giunti al df_operazioni d'interesse nel quale in ogni riga descrive una singola operazione registrata.
