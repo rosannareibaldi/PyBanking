@@ -1,6 +1,10 @@
 import banca
 
 def chiedeCambiaPassword(utente):
+    """ Chiede all'utente se desidera cambiare password e in caso affermativo modifica la password come richiesto dall'utente
+    Args:
+        utente (object) : oggetto della classe Utente
+    """
     cambio_password = input("Vuoi cambiare la password?\n Digita 1 per effettuare il cambio password\n Digita 2 se vuoi proseguire con la password attuale\n")
     if cambio_password == "1":
         nuova_password = input("Nuova password: ")
@@ -10,6 +14,12 @@ def chiedeCambiaPassword(utente):
         chiedeCambiaPassword(utente)
 
 def controlloNome(nome):
+    """ Controlla se il nome è composto solo da lettere e in caso contrario chiede un nuovo inserimento
+    Args:
+        nome (str) : nome inserito dall'utente
+    Returns:
+        nome (str) : nome aggiornato dall'utente se aveva precedentemento inserito caratteri sbagliati
+    """
     if not nome.isalpha():
         print("Formato non corretto. Inserire solo lettere.\n")
         nome = input ("Inserisci il tuo nome: ")
@@ -17,6 +27,12 @@ def controlloNome(nome):
     return nome
 
 def controlloCognome(cognome):
+    """ Controlla se il cognome è composto solo da lettere e in caso contrario chiede un nuovo inserimento
+    Args:
+        cognome (str) : cognome inserito dall'utente
+    Returns:
+        cognome (str) : cognome aggiornato dall'utente se aveva precedentemento inserito caratteri sbagliati
+    """
     if not cognome.isalpha():
         print("Formato non corretto. Inserire solo lettere.\n")
         cognome = input ("Inserisci il tuo cognome: ")
@@ -24,6 +40,12 @@ def controlloCognome(cognome):
     return cognome
 
 def controlloNumero(num_telefono):
+    """ Controlla se il numero di telefono è composto solo da 10 cifre e in caso contrario chiede un nuovo inserimento
+    Args:
+        num_telefono (str) : numero di telefono inserito dall'utente
+    Returns:
+        num_telefono (str) : numero di telefono aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+    """
     if not num_telefono.isdigit() or len(num_telefono)!=10:
         print("Formato non corretto. Inserire 10 cifre.\n")
         num_telefono = input ("Inserisci il tuo numero di telefono: ")
@@ -31,6 +53,12 @@ def controlloNumero(num_telefono):
     return num_telefono
 
 def controlloAnno(anno):
+    """ Controlla se l'anno è in un formato corretto e in caso contrario chiede un nuovo inserimento
+    Args:
+        anno (str) : anno inserito dall'utente
+    Returns:
+        anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+    """
     if not anno.isdigit() or len(anno)!=4 or int(anno)>2023 or int(anno)<0:
         print("Formato non corretto. Inserire l'anno nel formato 1990.\n")
         anno = input ("Inserisci il tuo anno di nascita: ")
@@ -38,6 +66,12 @@ def controlloAnno(anno):
     return anno
 
 def controlloMese(mese):
+    """ Controlla se il mese è in un formato corretto e in caso contrario chiede un nuovo inserimento
+    Args:
+        mese (str) : mese inserito dall'utente
+    Returns:
+        mese (str) : mese aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+    """
     if not mese.isdigit() or int(mese)>12 or int(mese)<1:
         print("Formato non corretto. Inserire il mese nel formato 1,2,3, ... .\n")
         mese = input ("Inserisci il tuo mese di nascita: ")
@@ -45,6 +79,15 @@ def controlloMese(mese):
     return mese
 
 def controlloGiorno(giorno,mese,anno):
+    """ Controlla se il giorno è in un formato corretto e in caso contrario chiede un nuovo inserimento. 
+        Controlla il giorno anche in base all'anno e al mese selezionati.
+    Args:
+        giorno (str) : giorno inserito dall'utente
+        mese (str) : mese inserito dall'utente
+        anno (str) : anno inserito dall'utente
+    Returns:
+        giorno (str) : giorno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+    """
     if not giorno.isdigit() or int(giorno)<0:
         print("Formato non corretto. Inserire il giorno nel formato 1,2,3, ... .\n")
         giorno = input ("Inserisci il tuo giorno di nascita: ")
