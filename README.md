@@ -65,3 +65,116 @@ L'operazione 'stampa report', permetterà all'utente di visualizzare un report c
 
 
 Durante l'inizializzazione di una delle cinque operazioni sovraelencate sarà possibile digitando 'menu' al posto dell'input richiesto di tornare al menù operativo dal quale si potrà inizializzare una nuova operazione. Similmente succederà se portata a termine una singola operazione.
+
+## file registro.py
+
+### Caratteristiche  
+ - Creazione di account utente con informazioni personali di base 
+ - Generazione automatica di password casuali 
+ - Operazioni di deposito e prelievo 
+ - Gestione del saldo dell'account 
+ - Tracciamento e generazione di rapporti delle transazioni
+
+### Codice
+
+#### Funzione generaPassword
+
+		 def  generaPassword(lunghezza):
+
+     
+*Genera una password della lunghezza richiesta, prendendo 
+	randomicamente caratteri tra lettere, numeri e punteggiatura.*
+	
+#### Classe Utente
+Creazione della **classe Utente** per la gestione degli account utente;
+
+         class  Utente: 	  
+        def  __init__(self, nome, cognome, data_nascita, indirizzo, num_telefono, saldo  =  0, registro  =  None, utente  =  0):
+
+*Permette la creazione di oggetti Utenti inserendo nome, cognome, data di nascita, indirizzo e numero di telefono. 
+I valori di saldo, registro delle transazioni e codice utente possono essere inseriti nel momento della creazione, altrimenti di default il saldo è nullo, il registro è vuoto e il codice utente è 0.*
+
+
+	Classe Utente:
+    Args:
+     	nome (str) : nome utente 
+   	 cognome (str) : cognome utente
+   	 data_nascita (datetime.date) : data nascita utente
+    	 indirizzo (str) : indirizzo utente
+   	  num_telefono (int) : numero di telefono utente
+    	 saldo (int) : saldo attuale,
+	     				default =0
+	     registro (matrix) : registro operazioni,
+							lista contenente liste del tipo [Id_utente (int), data operazione (datetime), nome operazione(str), operazione (int), saldo (int)],  
+							 default = [[0, data creazione conto, "creazione conto", 0, 0]]
+		 utente (int) : id utente,
+						default = 0
+
+All'interno della classe sono presenti inoltre le definizione di funzioni che permettano la gestione delle credenziali e di alcune operazioni bancarie e  stampa del report contenente le transazioni avvenute. 
+In particolare, all'interno della classe Utente, sono state definite **funzioni**, che permettono le seguenti operazioni:
+
+
+ - *Aggiornare l'oggetto della classe Utente inserendo utente e password.*
+
+		def  creaCredenziali(self, numero_utenti):`
+ 
+>      Args:
+> 	    	 numero_utenti (int) : numero utenti già registrati
+
+     
+
+ - *Stampare le credenziali dell'Utente*
+
+		def  stampaCredenziali(self):
+
+ - *Cambiare la password dell'Utente*
+
+	    def  cambiaPassword (self, nuova_password):
+>     Args:
+> 	    nuova_password (str) : password che si vuole inserire
+
+ - *Controllare la password inserita*
+		
+		def  passwordCorretta(self, password_inserita):
+>     Args:
+>     	password_inserita (str) : password inserita dall'utente
+>     Returns:
+>     	True se la password corrisponde con quella dell'Utente
+>    		False altrimenti
+
+ - *Aggiornare il saldo depositando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
+ 
+		 def  deposita(self, deposito):
+
+>     Args:
+>     	deposito (int) : somma di denaro che si vuole depositare
+
+- *Aggiornare il saldo prelevando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
+ 
+		 def  preleva(self, prelievo):
+
+>     Args:
+>     	prelievo (int) : somma di denaro che si vuole prelevare
+
+- *Aggiornare il saldo trasferendo la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
+ 
+		 def  trasferisci(self, somma):
+
+>     Args:
+>     	somma (int) : somma di denaro che si vuole trasferire
+
+- *Aggiornare il saldo ricevendo la somma richiesta, aggiornare il registro delle operazioni*
+ 
+		 def  ricevi(self, somma):
+
+>     Args:
+>     	somma (int) : somma di denaro che si deve ricevere
+
+ - *Stampare il saldo attuale e il report delle transazioni avvenute in
+   precedenza*
+
+		def  stampaReport(self):
+
+#### Inserimento dati
+
+Sono stati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
