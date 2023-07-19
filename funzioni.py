@@ -14,30 +14,35 @@ def controlloNome(nome):
         print("Formato non corretto. Inserire solo lettere.\n")
         nome = input ("Inserisci il tuo nome: ")
         controlloNome(nome)
+    return nome
 
 def controlloCognome(cognome):
     if not cognome.isalpha():
         print("Formato non corretto. Inserire solo lettere.\n")
         cognome = input ("Inserisci il tuo cognome: ")
         controlloCognome(cognome)
+    return cognome
 
 def controlloNumero(num_telefono):
     if not num_telefono.isdigit() or len(num_telefono)!=10:
         print("Formato non corretto. Inserire 10 cifre.\n")
         num_telefono = input ("Inserisci il tuo numero di telefono: ")
         controlloNumero(num_telefono)
+    return num_telefono
 
 def controlloAnno(anno):
     if not anno.isdigit() or len(anno)!=4 or int(anno)>2023 or int(anno)<0:
         print("Formato non corretto. Inserire l'anno nel formato 1990.\n")
         anno = input ("Inserisci il tuo anno di nascita: ")
         controlloAnno(anno)
+    return anno
 
 def controlloMese(mese):
     if not mese.isdigit() or int(mese)>12 or int(mese)<1:
         print("Formato non corretto. Inserire il mese nel formato 1,2,3, ... .\n")
         mese = input ("Inserisci il tuo mese di nascita: ")
         controlloMese(mese)
+    return mese
 
 def controlloGiorno(giorno,mese,anno):
     if not giorno.isdigit() or int(giorno)<0:
@@ -63,3 +68,4 @@ def controlloGiorno(giorno,mese,anno):
             print(f"Formato non corretto. Febbraio aveva 28 giorni nel {anno}. Inserire il giorno nel formato 1,2,3, ... .\n")
             giorno = input ("Inserisci il tuo giorno di nascita: ")
             controlloGiorno(giorno,mese,anno)       
+    return giorno
