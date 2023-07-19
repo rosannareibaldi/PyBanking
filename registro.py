@@ -18,7 +18,7 @@ def generaPassword(lunghezza):
 
 class Utente:
     def __init__(self, nome, cognome, data_nascita, indirizzo, num_telefono, saldo = 0, \
-                 registro = [[0, datetime.datetime.now(), "creazione conto", 0, 0]]):
+                 registro = None, utente = 0):
         """Classe Utente:
         Args:
             nome (str) : nome utente
@@ -28,10 +28,14 @@ class Utente:
             num_telefono (int) : numero di telefono utente
             saldo (int) : saldo attuale, 
                             default =0
-            registro (list) : registro operazioni, 
+            registro (matrix) : registro operazioni, 
                             lista contenente liste del tipo [Id_utente (int), data operazione (datetime), nome operazione(str), operazione (int), saldo (int)], 
                             default = [[0, data creazione conto, "creazione conto", 0, 0]]
+            utente (int) : id utente,
+                                default = 0
             """
+        if registro is None:
+            registro = [[0, datetime.datetime.now(), "creazione conto", 0, 0]]
         self.nome = nome
         self.cognome = cognome
         self.data_nascita = data_nascita
@@ -39,6 +43,7 @@ class Utente:
         self.num_telefono = num_telefono
         self.saldo = saldo
         self.registro = registro
+        self.utente = utente
     
     def creaCredenziali(self,numero_utenti):
         """ Aggiorna l'oggetto della classe Utente inserendo utente e password
@@ -46,9 +51,11 @@ class Utente:
             numero_utenti (int) : numero utenti già registrati 
         """
         self.utente = numero_utenti + 1
-        self.registro[0][0]= self.utente
+        self.registro[:][0]= self.utente
         self.__password = generaPassword(5)
-        print(f"Registrato!\n Utente: {self.utente}\n Password: {self.__password}\n")
+    
+    def stampaCredenziali():
+        print(f"Utente: {self.utente}\n Password: {self.__password}\n")
     
     def passwordCorretta(self, password_inserita):
         if self.__password == password_inserita:
@@ -128,7 +135,8 @@ lista_utenti.append(utente1)
 # Utente 2
 data_nascita2 = datetime.date(1994, 10, 23)
 data_creazione2 = datetime.date(2020, 6, 9)
-utente2 = Utente("Rosanna", "Reibaldi", data_nascita2, "via rosa", 37507872910, 2500, [[0, data_creazione2, "creazione conto", 2500, 2500]])
+data_prelievo1 = datetime.date(2020, 7, 18)
+utente2 = Utente("Rosanna", "Reibaldi", data_nascita2, "via rosa", 37507872910, 2200, [[0, data_creazione2, "creazione conto", 2500, 2500],[0, data_prelievo1, "prelievo", - 300, 2200]])
 utente2.creaCredenziali(len(lista_utenti))
 lista_utenti.append(utente2)
 
