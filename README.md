@@ -127,7 +127,7 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 		def  creaCredenziali(self, numero_utenti):`
  
-      			Args:
+   			Args:
  	    	 	numero_utenti (int) : numero utenti già registrati
 
      
@@ -158,28 +158,28 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 		 def  deposita(self, deposito):
 
 		     Args:
-		     	deposito (int) : somma di denaro che si vuole depositare
+		     		deposito (int) : somma di denaro che si vuole depositare
 
 - *Aggiornare il saldo prelevando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
 		 def  preleva(self, prelievo):
 
 		     Args:
-		     	prelievo (int) : somma di denaro che si vuole prelevare
+		     		prelievo (int) : somma di denaro che si vuole prelevare
 
 - *Aggiornare il saldo trasferendo la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
 		 def  trasferisci(self, somma):
 
 		     Args:
-		     	somma (int) : somma di denaro che si vuole trasferire
+		     		somma (int) : somma di denaro che si vuole trasferire
 
 - *Aggiornare il saldo ricevendo la somma richiesta, aggiornare il registro delle operazioni*
  
 		 def  ricevi(self, somma):
 
 		     Args:
-		     	somma (int) : somma di denaro che si deve ricevere
+		     		somma (int) : somma di denaro che si deve ricevere
 
  - *Stampare il saldo attuale e il report delle transazioni avvenute in
    precedenza*
