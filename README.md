@@ -178,3 +178,36 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 #### Inserimento dati
 
 Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
+
+## Manipolazione delle classi e creazione dei dataframe
+
+Al fine di agevolare l'analisi dei dati immagazzinati nella classe utente si è proseguito alla creazione di Dataframe Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
+La creazione del registro dei movimenti ha necessitato, partendo dalla lista_utenti precedentemente definita, la creazione di una lista di dataframes contenente le informazioni racchiuse nel registro. Successivamente definendo la funzione concat_dataframes si è giunti al df_operazioni d'interesse nel quale in ogni riga descrive una singola operazione registrata.
+
+>    def concat_dataframes(lista_df):
+>        Concatena una lista di df pandas in un unico nuovo df
+>    
+>    Args:
+>        lista_df= lista contente per ogni elemento un df
+>    
+>    Return:
+>        concat_df = pandas df
+
+Per ottenere l'elenco dei clienti è stata poi definita la funzione crea_df_utente() la quale individuando dalla lista_utenti le informazioni d'interesse e raccogliendole lungo liste vuote raccolte all'interno di un dizionaraio dedicato permette la restituzione di un dataframes pandas contenente informazione personali degli utenti.
+
+>    def crea_df_utente():
+>   '''
+>    Crea un df pandas ove ogni riga conterrà le informaioni
+>    relative ad un un singolo Utente 
+>    
+>    Args:
+>        None
+>
+>    Returns:
+>        df_utenti : pandas dataframe
+>
+>    '''
+
+I due dataframe creati sono infine stati uniti tramite operazione di merge lungo la variabile comune indicante l' id utente in un terzo dataframe pandas il quale permette di associare ogni operazione effettuata ai dati personali del soggetto interessato.
+
+Dopo una breve manipolazione del nuovo df, si è salvato un csv, poi riutilizzabile in operazione future in altri ambienti.
