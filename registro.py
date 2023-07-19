@@ -68,6 +68,13 @@ class Utente:
         self.__password = nuova_password
     
     def passwordCorretta(self, password_inserita):
+        """ Controllo password
+        Args:
+            password_inserita (str) : password inserita dall'utente
+        Returns:
+            True se la password corrisponde con quella dell'Utente
+            False altrimenti
+        """
         if self.__password == password_inserita:
             return True
         else:
@@ -100,14 +107,12 @@ class Utente:
     def ricevi(self, somma):
         """
         Aggiorna il saldo ricevendo la somma trasferita, aggiorna il registro delle operazioni 
-        e stampa il messaggio di operazione riuscita
 
         Args:
             somma (int) : somma di denaro che si deve ricevere
         """
         self.saldo += somma
         self.registro.append([self.utente, datetime.datetime.now(), "ricevimento", somma, self.saldo])
-        print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
     
     def trasferisci(self, somma):
         """
@@ -122,6 +127,8 @@ class Utente:
         print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
 
     def stampaReport(self):
+        """ Stampa il saldo attuale e il report delle transazioni avvenute in precedenza
+        """
         print(f"SALDO ATTUALE: {self.saldo}€\n")
         print("OPERAZIONI EFFETTUATE:\n")
         for riga in self.registro:
@@ -159,9 +166,7 @@ utente3.creaCredenziali(len(lista_utenti))
 utente3.cambiaPassword("ciao")
 lista_utenti.append(utente3)
 
-print(utente1.registro)
-print(utente2.registro)
-print(utente3.registro)
+
 
 
 
