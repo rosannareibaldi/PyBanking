@@ -66,6 +66,15 @@ L'operazione 'stampa report', permetterà all'utente di visualizzare un report c
 
 Durante l'inizializzazione di una delle cinque operazioni sovraelencate sarà possibile digitando 'menu' al posto dell'input richiesto di tornare al menù operativo dal quale si potrà inizializzare una nuova operazione. Similmente succederà se portata a termine una singola operazione.
 
+## STRUTTURA DEI FILE
+I file presenti sono i seguenti:
+- main.py : contiene il codice che descrive l'**interfaccia** utente;
+- funzioni.py : contiene alcune funzioni utilizzate nel *main*;
+- banca.py: contiene la classe `Utente`, con i relativi metodi;
+- archivio.py: contiene il codice che crea una variabile `lista_utenti`, contenente oggetti della classe `Utente` generati randomicamente;
+- creazione.py: contiene le funzioni utilizzate in *archivio* per la generazione di liste casuali
+- manipolazione.py: creazione di DataFrame Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti
+
 ## File banca.py
 
 ### Caratteristiche  
@@ -179,7 +188,7 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
-## file manipolazione.py 
+## File manipolazione.py 
 
 Al fine di agevolare l'analisi dei dati immagazzinati nella classe utente si è proseguito alla creazione di Dataframe Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 La creazione del registro dei movimenti ha necessitato, partendo dalla lista_utenti precedentemente definita, la creazione di una lista di dataframes contenente le informazioni racchiuse nel registro. Successivamente definendo la funzione concat_dataframes si è giunti al df_operazioni d'interesse nel quale in ogni riga descrive una singola operazione registrata.
