@@ -1,5 +1,6 @@
 import datetime
-import registro
+import banca
+import funzioni
 
 # messaggio di benvenuto
 print("Ciao! Benvenuto nella banca PyBanking!")
@@ -24,12 +25,12 @@ while operazione != "3":
                 
                 # verifica se l'utente è presente nella lista utenti
                 utente_trovato = 0
-                for i in range(len(registro.lista_utenti)):
-                    if int(utente) == registro.lista_utenti[i].utente:
+                for i in range(len(banca.lista_utenti)):
+                    if int(utente) == banca.lista_utenti[i].utente:
                         utente_trovato = 1
                         print("Codice utente esistente.")
                         check_utente = 1
-                        utente_attuale =  registro.lista_utenti[i]
+                        utente_attuale =  banca.lista_utenti[i]
                         break
                 if utente_trovato == 0:
                     print("Codice utente non presente nel registro. Riprova!")
@@ -90,11 +91,11 @@ while operazione != "3":
                         destinatario = input("Inserisci il codice utente del destinatario: ")
                         destinatario_trovato = 0
                         while destinatario_trovato != 1 and destinatario.lower() != "menu":
-                            for i in range(len(registro.lista_utenti)):
-                                if int(destinatario) == registro.lista_utenti[i].utente:
+                            for i in range(len(banca.lista_utenti)):
+                                if int(destinatario) == banca.lista_utenti[i].utente:
                                     destinatario_trovato = 1
                                     print("Il destinatario è nella lista utenti.")
-                                    destinatario_attuale =  registro.lista_utenti[i]
+                                    destinatario_attuale =  banca.lista_utenti[i]
                                     break
                             if destinatario_trovato == 0:
                                 print("Codice utente non presente nel registro. Riprova!")
@@ -136,14 +137,17 @@ while operazione != "3":
         data_nascita = datetime.date(anno_di_nascita,mese_di_nascita,giorno_di_nascita)
         indirizzo = input("Inserisci il tuo indirizzo: ")
         num_telefono = input("Inserisci il tuo numero di telefono: ")
+        
+        nuovo_utente = banca.Utente(nome, cognome, data_nascita, indirizzo, num_telefono)
+        numero_utenti = len(banca.lista_utenti)
+        nuovo_utente.creaCredenziali(numero_utenti)
+        banca.lista_utenti.append(nuovo_utente)
 
-        utente = registro.Utente(nome, cognome, data_nascita, indirizzo, num_telefono)
-
-        numero_utenti = 56 # sistemare
-        utente.creaCredenziali(numero_utenti)
-
-        print("Precedura di registrazione terminata con successo! Scegli la nuova operazione da effettuare")
-        operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare una nuova registrazione \nDigita 3 se vuoi uscire \n")
+        print("Precedura di registrazione terminata con successo!\n")
+        nuovo_utente.stampaCredenziali()
+        
+        funzioni.chiedeCambiaPassword(nuovo_utente)
+        operazione = input("Scegli la nuova operazione da effettuare:\nDigita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare una nuova registrazione \nDigita 3 se vuoi uscire \n")
 
 
 
