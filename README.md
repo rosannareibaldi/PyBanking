@@ -66,7 +66,7 @@ L'operazione 'stampa report', permetterà all'utente di visualizzare un report c
 
 Durante l'inizializzazione di una delle cinque operazioni sovraelencate sarà possibile digitando 'menu' al posto dell'input richiesto di tornare al menù operativo dal quale si potrà inizializzare una nuova operazione. Similmente succederà se portata a termine una singola operazione.
 
-## file registro.py
+## File banca.py
 
 ### Caratteristiche  
  - Creazione di account utente con informazioni personali di base 
