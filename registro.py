@@ -54,8 +54,17 @@ class Utente:
         self.registro[:][0]= self.utente
         self.__password = generaPassword(5)
     
-    def stampaCredenziali():
+    def stampaCredenziali(self):
+        """ Stampa le credenziali dell'Utente 
+        """
         print(f"Utente: {self.utente}\n Password: {self.__password}\n")
+
+    def cambiaPassword (self, nuova_password):
+        """ Cambia la password dell'Utente
+        Args:
+            nuova_password (str) : password che si vuole inserire
+            """
+        self.__password = nuova_password
     
     def passwordCorretta(self, password_inserita):
         if self.__password == password_inserita:
@@ -129,7 +138,7 @@ utente1.deposita(1000)
 utente1.preleva(50)
 utente1.deposita(20)
 utente1.preleva(200)
-
+utente1.cambiaPassword("1234")
 lista_utenti.append(utente1)
 
 # Utente 2
@@ -138,6 +147,7 @@ data_creazione2 = datetime.date(2020, 6, 9)
 data_prelievo1 = datetime.date(2020, 7, 18)
 utente2 = Utente("Rosanna", "Reibaldi", data_nascita2, "via rosa", 37507872910, 2200, [[0, data_creazione2, "creazione conto", 2500, 2500],[0, data_prelievo1, "prelievo", - 300, 2200]])
 utente2.creaCredenziali(len(lista_utenti))
+utente2.cambiaPassword("0000")
 lista_utenti.append(utente2)
 
 # Utente 3
@@ -145,6 +155,7 @@ data_nascita3 = datetime.date(1997, 4, 12)
 data_creazione3 = datetime.date(2023, 3, 21)
 utente3 = Utente("Leonardo", "Brunetti", data_nascita3, "via tal dei tali", 3240432570, 5000, [[0, data_creazione3, "creazione conto", 5000, 5000]])
 utente3.creaCredenziali(len(lista_utenti))
+utente3.cambiaPassword("ciao")
 lista_utenti.append(utente3)
 
 
