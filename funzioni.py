@@ -9,6 +9,18 @@ def chiedeCambiaPassword(utente):
         print("Scelta non valida.\n")
         chiedeCambiaPassword(utente)
 
+def controlloNome(nome):
+    if not nome.isalpha():
+        print("Formato non corretto. Inserire solo lettere.\n")
+        num_telefono = input ("Inserisci il tuo nome: ")
+        controlloNome(nome)
+
+def controlloCognome(cognome):
+    if not cognome.isalpha():
+        print("Formato non corretto. Inserire solo lettere.\n")
+        num_telefono = input ("Inserisci il tuo cognome: ")
+        controlloCognome(cognome)
+
 def controlloNumero(num_telefono):
     if not num_telefono.isdigit() or len(num_telefono)!=10:
         print("Formato non corretto. Inserire 10 cifre.\n")
