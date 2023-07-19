@@ -12,13 +12,13 @@ def chiedeCambiaPassword(utente):
 def controlloNome(nome):
     if not nome.isalpha():
         print("Formato non corretto. Inserire solo lettere.\n")
-        num_telefono = input ("Inserisci il tuo nome: ")
+        nome = input ("Inserisci il tuo nome: ")
         controlloNome(nome)
 
 def controlloCognome(cognome):
     if not cognome.isalpha():
         print("Formato non corretto. Inserire solo lettere.\n")
-        num_telefono = input ("Inserisci il tuo cognome: ")
+        cognome = input ("Inserisci il tuo cognome: ")
         controlloCognome(cognome)
 
 def controlloNumero(num_telefono):
