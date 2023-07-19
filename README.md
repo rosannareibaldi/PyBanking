@@ -139,17 +139,19 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
  - *Cambiare la password dell'Utente*
 
 	    def  cambiaPassword (self, nuova_password):
+   
    			Args:
  	    		nuova_password (str) : password che si vuole inserire
 
  - *Controllare la password inserita*
 		
 		def  passwordCorretta(self, password_inserita):
-     			Args:
-     			password_inserita (str) : password inserita dall'utente
-     			Returns:
-     			True se la password corrisponde con quella dell'Utente
- 			False altrimenti
+
+   			Args:
+   				password_inserita (str) : password inserita dall'utente
+   			Returns:
+   				True se la password corrisponde con quella dell'Utente
+ 				False altrimenti
 
  - *Aggiornare il saldo depositando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
