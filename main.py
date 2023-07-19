@@ -16,8 +16,10 @@ while operazione != "3":
         while check_utente == 0:
             utente = input("Inserisci il codice utente oppure digita INDIETRO per tornare alla pagina principale: ")
 
-            if utente == "INDIETRO":
+            if utente.lower() == "indietro":
                 check_utente = 1
+                operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare la registrazione \nDigita 3 se vuoi uscire \n")
+
             else:
                 
                 # verifica se l'utente è presente nella lista utenti
@@ -33,7 +35,7 @@ while operazione != "3":
                     print("Codice utente non presente nel registro. Riprova!")
                     check_utente = 0
         
-        if utente != "INDIETRO":
+        if utente.lower() != "indietro":
             numero_tentativi = 0
             check_password = 0
             while check_password == 0 and numero_tentativi < 3:
@@ -49,7 +51,11 @@ while operazione != "3":
             else:
                 print("Autenticazione eseguita con successo!")
                 print("Il tuo saldo attuale è", utente_attuale.saldo,"€")
-                azione = input("Hai a disposizione le seguenti opzioni:\n \
+
+
+                condizione_uscita = 0
+                while condizione_uscita !=1:
+                    azione = input("Hai a disposizione le seguenti opzioni:\n \
                     1 --> Deposito \n \
                     2 --> Prelievo \n \
                     3 --> Trasferimento di denaro\n \
@@ -57,29 +63,69 @@ while operazione != "3":
                     5 --> Esci\n \
                 Digita il numero corrispondente all'opzione desiderata: ")
 
-                if azione == "1":
-                    deposito = input("Hai scelto di depositare: quanto vuoi depositare? Digita MENU per tornare indietro.\n")
-                    if deposito == "MENU":
-                        break
-                    elif not deposito.isdigit():
-                        print("Inserimento non valido. Inserisci nuovo importo: ")
-                    else:
-                        deposito = int(deposito)
-                        utente_attuale.deposita(deposito)
+                    if azione == "1":
+                        deposito = input("Hai scelto di depositare: quanto vuoi depositare? Digita MENU per tornare indietro.\n")
+                        inserimento_corretto = 0
+                        while inserimento_corretto != 1 and deposito.lower() != "menu" :
+                            if not deposito.isdigit():
+                                deposito = input("Inserimento non valido. Inserisci nuovo importo: ")
+                            else:
+                                utente_attuale.deposita(int(deposito))
+                                inserimento_corretto = 1
+
+                    elif azione == "2":
+                        prelievo = input("Hai scelto di prelevare: quanto vuoi prelevare? Digita MENU per tornare indietro.\n")
+                        inserimento_corretto = 0
+                        while inserimento_corretto != 1 and prelievo.lower() != "menu":
+                            if not prelievo.isdigit():
+                                prelievo = input("Inserimento non valido. Inserisci nuovo importo: ")
+                            elif int(prelievo) > utente_attuale.saldo:
+                                prelievo = input("Il saldo non è sufficiente! Inserisci nuovo importo: ")
+                            else:
+                                utente_attuale.preleva(int(prelievo))
+                                inserimento_corretto = 1
+
+                    elif azione == "3":
+                        print("Hai scelto di trasferire denaro: a chi vuoi trasferire i soldi? Digita MENU per tornare indietro.\n")
+                        destinatario = input("Inserisci il codice utente del destinatario: ")
+                        destinatario_trovato = 0
+                        while destinatario_trovato != 1 and destinatario.lower() != "menu":
+                            for i in range(len(registro.lista_utenti)):
+                                if int(destinatario) == registro.lista_utenti[i].utente:
+                                    destinatario_trovato = 1
+                                    print("Il destinatario è nella lista utenti.")
+                                    destinatario_attuale =  registro.lista_utenti[i]
+                                    break
+                            if destinatario_trovato == 0:
+                                print("Codice utente non presente nel registro. Riprova!")
+                                destinatario = input("Inserisci il codice utente del destinatario: ")
 
 
-                elif azione == "2":
-                    print("Hai scelto di prelevare")
-                elif azione == "3":
-                    print("Hai scelto di trasferire denaro")
-                elif azione == "4":
-                    print("Hai scelto di stampare il report")
-                elif azione == "5":
-                    print("Hai scelto di uscire")
-                    break
+                        if destinatario_trovato == 1:
+                            trasferimento = input("Inserisci l'importo che vuoi trasferire: ")
+                            inserimento_corretto = 0
+                            while inserimento_corretto != 1:
+                                if not trasferimento.isdigit():
+                                    trasferimento = input("Inserimento non valido. Inserisci nuovo importo: ")
+                                elif int(trasferimento) > utente_attuale.saldo:
+                                    trasferimento = input("Il saldo non è sufficiente! Inserisci nuovo importo: ")
+                                else:
+                                    utente_attuale.trasferisci(int(trasferimento))
+                                    inserimento_corretto = 1
+                                    destinatario_attuale.ricevi(int(trasferimento))
 
 
+                    elif azione == "4":
+                        print("Hai scelto di stampare il report")
+                        utente_attuale.stampaReport()
 
+
+                    elif azione == "5":
+                        print("Hai scelto di uscire.")
+                        condizione_uscita = 1
+                        operazione = "3"
+                        
+                    
     elif operazione == "2":
         print("Benvenuto nella procedura di registrazione!")
         nome = input("Inserisci il tuo nome: ")
@@ -96,16 +142,16 @@ while operazione != "3":
         numero_utenti = 56 # sistemare
         utente.creaCredenziali(numero_utenti)
 
+        print("Precedura di registrazione terminata con successo! Scegli la nuova operazione da effettuare")
+        operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare una nuova registrazione \nDigita 3 se vuoi uscire \n")
+
 
 
 
     else:
         print("Scelta non corretta")
-
-    # scelta dell'operazione che si vuole effettuare
-    operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare la registrazione \nDigita 3 se vuoi uscire \n")
-
-
+        # scelta dell'operazione che si vuole effettuare
+        operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare la registrazione \nDigita 3 se vuoi uscire \n")
 
 
 
