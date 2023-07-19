@@ -51,7 +51,8 @@ class Utente:
             numero_utenti (int) : numero utenti già registrati 
         """
         self.utente = numero_utenti + 1
-        self.registro[:][0]= self.utente
+        for i in range(len(self.registro)):
+            self.registro[i][0] = self.utente
         self.__password = generaPassword(5)
     
     def stampaCredenziali(self):
@@ -158,6 +159,9 @@ utente3.creaCredenziali(len(lista_utenti))
 utente3.cambiaPassword("ciao")
 lista_utenti.append(utente3)
 
+print(utente1.registro)
+print(utente2.registro)
+print(utente3.registro)
 
 
 
