@@ -72,8 +72,8 @@ I file presenti sono i seguenti:
 - funzioni.py : contiene alcune funzioni utilizzate nel *main*;
 - banca.py: contiene la classe `Utente`, con i relativi metodi;
 - archivio.py: contiene il codice che crea una variabile `lista_utenti`, contenente oggetti della classe `Utente` generati randomicamente;
-- creazione.py: contiene le funzioni utilizzate in *archivio* per la generazione di liste casuali
-- manipolazione.py: creazione di DataFrame Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti
+- creazione.py: contiene le funzioni utilizzate in *archivio* per la generazione di liste casuali;
+- manipolazione.py: creazione di DataFrame Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 
 ## File banca.py
 
@@ -127,8 +127,8 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 		def  creaCredenziali(self, numero_utenti):`
  
->      Args:
-> 	    	 numero_utenti (int) : numero utenti già registrati
+      			Args:
+ 	    	 	numero_utenti (int) : numero utenti già registrati
 
      
 
@@ -139,52 +139,52 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
  - *Cambiare la password dell'Utente*
 
 	    def  cambiaPassword (self, nuova_password):
->     Args:
-> 	    nuova_password (str) : password che si vuole inserire
+   			Args:
+ 	    		nuova_password (str) : password che si vuole inserire
 
  - *Controllare la password inserita*
 		
 		def  passwordCorretta(self, password_inserita):
->     Args:
->     	password_inserita (str) : password inserita dall'utente
->     Returns:
->     	True se la password corrisponde con quella dell'Utente
->    		False altrimenti
+     			Args:
+     			password_inserita (str) : password inserita dall'utente
+     			Returns:
+     			True se la password corrisponde con quella dell'Utente
+ 			False altrimenti
 
  - *Aggiornare il saldo depositando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
 		 def  deposita(self, deposito):
 
->     Args:
->     	deposito (int) : somma di denaro che si vuole depositare
+		     Args:
+		     	deposito (int) : somma di denaro che si vuole depositare
 
 - *Aggiornare il saldo prelevando la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
 		 def  preleva(self, prelievo):
 
->     Args:
->     	prelievo (int) : somma di denaro che si vuole prelevare
+		     Args:
+		     	prelievo (int) : somma di denaro che si vuole prelevare
 
 - *Aggiornare il saldo trasferendo la somma richiesta, aggiornare il registro delle operazioni e stampare il messaggio di operazione riuscita*
  
 		 def  trasferisci(self, somma):
 
->     Args:
->     	somma (int) : somma di denaro che si vuole trasferire
+		     Args:
+		     	somma (int) : somma di denaro che si vuole trasferire
 
 - *Aggiornare il saldo ricevendo la somma richiesta, aggiornare il registro delle operazioni*
  
 		 def  ricevi(self, somma):
 
->     Args:
->     	somma (int) : somma di denaro che si deve ricevere
+		     Args:
+		     	somma (int) : somma di denaro che si deve ricevere
 
  - *Stampare il saldo attuale e il report delle transazioni avvenute in
    precedenza*
 
 		def  stampaReport(self):
 
-#### Inserimento dati
+## File archivio.py
 
 Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
