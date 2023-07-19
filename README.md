@@ -177,4 +177,4 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 #### Inserimento dati
 
-Sono stati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
+Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
