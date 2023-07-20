@@ -10,6 +10,7 @@
 - [File archivio](#file-archivio)
 - [File creazione](#file-archivio)
 - [File manipolazione](#file-manipolazione)
+- [File analisi](#file-analisi)
 ## Coding rules
 ### Indentazione e formattazione
 Inserire righe vuote:
@@ -309,7 +310,7 @@ I due dataframe creati sono infine stati uniti tramite operazione di merge lungo
 
 Dopo una breve manipolazione del nuovo df, si è salvato un csv, poi riutilizzabile in operazione future in altri ambienti.
 
-## Analisi
+## File Analisi
 
 Costruita una sessione spark definita ''LavoroFinale'' e caricate le librerie utili all'analisi, è stato importato il file csv precedentemente creato e trasformato contestualmente in un dataframe spark. Le variabili del df sono state poi tipizzate correttamente per agevolare l'analisi.
 
