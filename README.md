@@ -4,12 +4,12 @@
 - [Coding Rules](#coding-rules)
 - [Guida all'utilizzo](#guida-allutilizzo)
 - [Struttura dei files](#struttura-dei-files)
-- [File main](#file-main)
-- [File funzioni](#file-funzioni)
-- [File banca](#file-banca)
-- [File archivio](#file-archivio)
-- [File creazione](#file-archivio)
-- [File manipolazione](#file-manipolazione)
+- [File main.py](#file-main.py)
+- [File funzioni.py](#file-funzioni.py)
+- [File banca.py](#file-banca.py)
+- [File archivio.py](#file-archivio.py)
+- [File creazione.py](#file-archivio.py)
+- [File manipolazione.py](#file-manipolazione.py)
 ## Coding rules
 ### Indentazione e formattazione
 Inserire righe vuote:
@@ -85,10 +85,10 @@ I file presenti sono i seguenti:
 - creazione.py: contiene le funzioni utilizzate in *archivio* per la generazione di liste casuali;
 - manipolazione.py: creazione di DataFrame Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 
-## File main
+## File main.py
 Il file main.py è spiegato nel dettaglio nel file *spiegazione codice main.md*.
 
-## File funzioni
+## File funzioni.py
 Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
 
  - chiedere all'utente se desidera cambiare password e in caso affermativo
@@ -152,7 +152,6 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
  - Creazione di account utente con informazioni personali di base 
  - Generazione automatica di password casuali 
  - Operazioni di deposito e prelievo 
- - Gestione del saldo dell'account 
  - Tracciamento e generazione di rapporti delle transazioni
 
 ### Codice
@@ -257,13 +256,13 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 		def  stampaReport(self):
 
-## File archivio
+## File archivio.py
 
 Sono stati creati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
-## File creazione
+## File creazione.py
 
-## File manipolazione 
+## File manipolazione.py 
 
 Al fine di agevolare l'analisi dei dati immagazzinati nella classe utente si è proseguito alla creazione di Dataframe Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 La creazione del registro dei movimenti ha necessitato, partendo dalla lista_utenti precedentemente definita, la creazione di una lista di dataframes contenente le informazioni racchiuse nel registro. Successivamente definendo la funzione concat_dataframes si è giunti al df_operazioni d'interesse nel quale in ogni riga descrive una singola operazione registrata.
