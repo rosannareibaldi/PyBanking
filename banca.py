@@ -131,10 +131,25 @@ class Utente:
         """
         print(f"SALDO ATTUALE: {self.saldo}€\n")
         print("OPERAZIONI EFFETTUATE:\n")
+        somma_entrate_mese = 0
+        somma_uscite_mese = 0
+        somma_totale_mese = 0
+        ultimo_mese = self.registro[len(self.registro)-1][1].month
+        ultimo_anno = self.registro[len(self.registro)-1][1].year
         for riga in self.registro:
             data_str = riga[1].strftime("%d/%m/%Y")
             print(f"Data: {data_str}, Operazione: {riga[2]} di {riga[3]}€, Saldo: {riga[4]}€ \n")
+            if riga[1].month == ultimo_mese and riga[1].year == ultimo_anno:
+                if riga[2] == "prelievo" or riga[2] == "trasferimento":
+                    somma_uscite_mese += riga[3]
+                else:
+                    somma_entrate_mese += riga[3]
+                somma_totale_mese += riga[3]
 
+        print("MOVIMENTI ULTIMO MESE: \n")
+        print(f"ENTRATE: +{somma_entrate_mese}€\n")
+        print(f"USCITE: {somma_uscite_mese}€ \n")
+        print(f"TOTALE: {somma_totale_mese}€ \n")
 
 
 

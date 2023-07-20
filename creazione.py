@@ -127,6 +127,15 @@ def generaSaldi(num_numeri):
     return numeri_casuali
 
 def generaRegistro(data_precedente, saldo):
+    """
+    Genera una lista contente gli elementi di un'operazione, in maniera casuale
+
+    Args:
+        data_precedente (date) : data dell'operazione precedente 
+
+    Returns:
+        registro_operazione (list) : lista contente [0, data operazione, descrizione operazione, somma spostata, saldo aggiornato]]
+        """
     giorni = random.randint(1,30)
     data_operazione = data_precedente + datetime.timedelta(days=giorni)
     lista_operazioni = ["prelievo", "deposito", "trasferimento", "ricevimento"]

@@ -12,7 +12,7 @@ lista_utenti = []
 # Utente1 
 # utente = 1, password = "passsword"
 data_nascita1 = datetime.date(1998, 12, 2)
-utente1 = banca.Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192,[[0, datetime.datetime(2023, 5, 20, 9, 13, 46, 63466), 'creazione conto', 0, 0],\
+utente1 = banca.Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192,770,[[0, datetime.datetime(2023, 5, 20, 9, 13, 46, 63466), 'creazione conto', 0, 0],\
                                                                                      [0, datetime.datetime(2023, 5, 28, 9, 13, 46, 63466), 'deposito', 1000, 1000], \
                                                                                         [0, datetime.datetime(2023, 6, 10, 9, 13, 46, 63950), 'prelievo', -50, 950],\
                                                                                           [0, datetime.datetime(2023, 6, 12, 9, 13, 46, 63950), 'deposito', 20, 970], \
@@ -65,7 +65,7 @@ lista_saldi = creazione.generaSaldi(100)
 for i in range(100):
     registro_creazione=[0,lista_date_nascita[i] + datetime.timedelta(days=18*365), "creazione conto", lista_saldi[i], lista_saldi[i]]
     registro = [registro_creazione]
-    num_operazioni = random.randint(1,100)
+    num_operazioni = random.randint(1,500)
 
     for j in range(num_operazioni):
         data_precedente = registro[len(registro)-1][1]
