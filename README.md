@@ -3,13 +3,13 @@
 ## Indice
 - [Coding Rules](#coding-rules)
 - [Guida all'utilizzo](#guida-allutilizzo)
-- [Struttura dei files](struttura-dei-files)
-- [File main](file-main)
-- [File funzioni](file-funzioni)
-- [File banca](file-banca)
-- [File archivio](file-archivio)
-- [File creazione](file-archivio)
-- [File manipolazione](file-manipolazione)
+- [Struttura dei files](#struttura-dei-files)
+- [File main](#file-main)
+- [File funzioni](#file-funzioni)
+- [File banca](#file-banca)
+- [File archivio](#file-archivio)
+- [File creazione](#file-archivio)
+- [File manipolazione](#file-manipolazione)
 ## Coding rules
 ### Indentazione e formattazione
 Inserire righe vuote:
