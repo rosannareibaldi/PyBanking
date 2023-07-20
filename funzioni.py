@@ -1,4 +1,6 @@
 import banca
+import sys
+import time
 
 def chiedeCambiaPassword(utente):
     """ Chiede all'utente se desidera cambiare password e in caso affermativo modifica la password come richiesto dall'utente
@@ -112,3 +114,13 @@ def controlloGiorno(giorno,mese,anno):
             giorno = input ("Inserisci il tuo giorno di nascita: ")
             controlloGiorno(giorno,mese,anno)       
     return giorno
+
+
+def stampa_simulata(testo):
+    for carattere in testo:
+        sys.stdout.write(carattere)
+        sys.stdout.flush()
+        time.sleep(0.02)  # Puoi regolare il tempo di pausa tra i caratteri qui
+    print()  # Andare a capo dopo aver stampato tutto il testo
+
+

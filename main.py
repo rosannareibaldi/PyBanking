@@ -2,10 +2,13 @@ import datetime
 import banca
 import funzioni
 from archivio import lista_utenti
+import getpass
+import time
+
 
 # Stampa del messaggio di benvenuto
-print("Ciao! Benvenuto nella banca PyBanking!\n")
-
+funzioni.stampa_simulata("Ciao! Benvenuto nella banca PyBanking!\n")
+time.sleep(0.8)
 # Finestra operativa che consente all'utente di scegliere l'operazione da effettuare
 operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare \
 la registrazione \nDigita 3 se vuoi uscire \n")
@@ -31,7 +34,7 @@ effettuare la registrazione \nDigita 3 se vuoi uscire \n")
                 for i in range(len(lista_utenti)):
                     if int(utente) == lista_utenti[i].utente:
                         utente_trovato = 1  # variabile di controllo
-                        print("Codice utente esistente.\n")
+                        funzioni.stampa_simulata("Codice utente esistente.\n")
                         check_utente = 1
                         utente_attuale = lista_utenti[i]     # codice dell'utente attuale
                         break
@@ -39,7 +42,7 @@ effettuare la registrazione \nDigita 3 se vuoi uscire \n")
                 # Se il codice utente inserito non è presente in archivio, è possibile inserire un
                 # nuovo codice utente oppure tornarte indietro per effettuare la registrazione
                 if utente_trovato == 0:
-                    print("Codice utente non presente nel registro. Riprova oppure torna indietro per \
+                    funzioni.stampa_simulata("Codice utente non presente nel registro. Riprova oppure torna indietro per \
 registrarti!\n")
                     check_utente = 0
         
@@ -50,19 +53,19 @@ registrarti!\n")
             
             # Viene richiesto l'inserimento della password per al massimo tre volte
             while check_password == 0 and numero_tentativi < 3:
-                password = input("Inserisci la password: ")
+                password = getpass.getpass("Inserisci la password: ")
                 numero_tentativi += 1
                 check_password = utente_attuale.passwordCorretta(password)
                 if check_password == 0:
-                    print("Password errata!")
+                    print(f"Password errata! Tentativi rimasti {3-numero_tentativi}")
             
             # Esauriti i tre tentativi per l'inserimento della password, l'esecuzione viene interrotta.
             if numero_tentativi == 3 and check_password == 0:
-                print("Tentativi terminati\n")
+                funzioni.stampa_simulata("Tentativi terminati\n")
                 break
             else:
                 # Si procede con la scelta dell'operazione da effettuare
-                print("Autenticazione eseguita con successo!\n")
+                funzioni.stampa_simulata("Autenticazione eseguita con successo!\n")
                 print("Il tuo saldo attuale è", utente_attuale.saldo,"€ \n")
 
                 condizione_uscita = 0 # variabile di controllo
@@ -108,7 +111,7 @@ Digita MENU per tornare indietro.\n")
 
                     # trasferimento di denaro
                     elif azione == "3":
-                        print("Hai scelto di trasferire denaro: a chi vuoi trasferire i soldi? \
+                        funzioni.stampa_simulata("Hai scelto di trasferire denaro: a chi vuoi trasferire i soldi? \
 Digita MENU per tornare indietro.\n")
                         # Viene richiesto l'inserimento del codice utente del destinatario
                         destinatario = input("Inserisci il codice utente del destinatario: ")
@@ -117,11 +120,11 @@ Digita MENU per tornare indietro.\n")
                             for i in range(len(lista_utenti)):
                                 if int(destinatario) == lista_utenti[i].utente:
                                     destinatario_trovato = 1
-                                    print("Il destinatario è nella lista utenti.\n")
+                                    funzioni.stampa_simulata("Il destinatario è nella lista utenti.\n")
                                     destinatario_attuale = lista_utenti[i] #codice utente del beneficiario
                                     break
                             if destinatario_trovato == 0:
-                                print("Codice utente non presente nel registro. Riprova!")
+                                funzioni.stampa_simulata("Codice utente non presente nel registro. Riprova!")
                                 destinatario = input("Inserisci il codice utente del destinatario: ")
 
                         # Nel caso di codice utente valido per il destinatario, viene richiesto l'importo
@@ -146,19 +149,19 @@ Inserisci nuovo importo: ")
 
                     # stampa del report
                     elif azione == "4":
-                        print("Hai scelto di stampare il report")
+                        funzioni.stampa_simulata("Hai scelto di stampare il report")
                         utente_attuale.stampaReport()
 
 
                     # uscita
                     elif azione == "5":
-                        print("Hai scelto di uscire.")
+                        funzioni.stampa_simulata("Hai scelto di uscire.")
                         condizione_uscita = 1
                         operazione = "3"
                         
                     
     elif operazione == "2":
-        print("Benvenuto nella procedura di registrazione!\n")
+        funzioni.stampa_simulata("Benvenuto nella procedura di registrazione!\n")
 
         # Inserimento e verifica del nome
         nome = input("Inserisci il tuo nome: ")
@@ -196,7 +199,7 @@ Inserisci nuovo importo: ")
         nuovo_utente.creaCredenziali(numero_utenti)
         lista_utenti.append(nuovo_utente)
 
-        print("Procedura di registrazione terminata con successo!\n")
+        funzioni.stampa_simulata("Procedura di registrazione terminata con successo!\n")
         nuovo_utente.stampaCredenziali()
         
         # Procedura cambio password
@@ -209,11 +212,11 @@ l'accesso \nDigita 2 se vuoi effettuare una nuova registrazione \nDigita 3 se vu
 
     else:
         # Il valore inserito non corrisponde ad una scelta valida
-        print("Scelta non corretta\n")
+        funzioni.stampa_simulata("Scelta non corretta\n")
         operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare \
 la registrazione \nDigita 3 se vuoi uscire \n")
 
 
 
 if operazione == "3":
-    print("Arrivederci!")
+    funzioni.stampa_simulata("Arrivederci!")
