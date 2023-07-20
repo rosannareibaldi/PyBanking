@@ -85,6 +85,67 @@ I file presenti sono i seguenti:
 - creazione.py: contiene le funzioni utilizzate in *archivio* per la generazione di liste casuali;
 - manipolazione.py: creazione di DataFrame Pandas dedicati contenenti l'elenco dei clienti e il registro dei movimenti.
 
+## File main.py
+Il file main.py è spiegato nel dettaglio nel file *spiegazione codice main.md*.
+
+## File funzioni.py
+Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
+
+ - chiedere all'utente se desidera cambiare password e in caso affermativo
+   modificare la password come richiesto dall'utente
+
+       def  chiedeCambiaPassword(utente):
+		    Args:
+			    utente (object) : oggetto della classe Utente
+
+ - controllare se il nome e il cognome sono composti solo da lettere e in caso contrario chiedere un nuovo inserimento
+   
+       def  controlloNome(nome):
+	       Args:
+		       nome (str) : nome inserito dall'utente
+	       Returns:
+		       nome (str) : nome aggiornato dall'utente se aveva precedentemento inserito caratteri sbagliati 
+
+ - Controllare se il numero di telefono è composto solo da 10 cifre e in
+   caso contrario chiedere un nuovo inserimento
+   
+       def  controlloNumero(num_telefono)
+	       Args:
+		       num_telefono (str) : numero di telefono inserito dall'utente
+	       Returns:
+		       num_telefono (str) : numero di telefono aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+
+ - Controlla se l'anno è in un formato corretto e in caso contrario
+   chiede un nuovo inserimento
+   
+       def  controlloAnno(anno):
+   	    Args:
+   		    anno (str) : anno inserito dall'utente
+   	    Returns:
+   		    anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+
+ - Controlla se il mese è in un formato corretto e in caso contrario
+   chiede un nuovo inserimento
+   
+       def  controlloMese(mese):
+       Args:
+       mese (str) : mese inserito dall'utente
+       Returns:
+       mese (str) : mese aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+
+  
+
+ - Controlla se il giorno è in un formato corretto e in caso contrario
+   chiede un nuovo inserimento. Controlla il giorno anche in base all'anno e al mese selezionati.
+   
+       def  controlloGiorno(giorno,mese,anno):
+	       Args:
+		       giorno (str) : giorno inserito dall'utente
+	       mese (str) : mese inserito dall'utente
+		       anno (str) : anno inserito dall'utente
+	       Returns:
+		       giorno (str) : giorno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+
 ## File banca.py
 
 ### Caratteristiche  
@@ -199,6 +260,8 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 ## File archivio.py
 
 Sono stati creati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
+
+## File creazione.py
 
 ## File manipolazione.py 
 
