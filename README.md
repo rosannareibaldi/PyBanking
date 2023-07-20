@@ -308,3 +308,12 @@ Per ottenere l'elenco dei clienti è stata poi definita la funzione crea_df_uten
 I due dataframe creati sono infine stati uniti tramite operazione di merge lungo la variabile comune indicante l' id utente in un terzo dataframe pandas il quale permette di associare ogni operazione effettuata ai dati personali del soggetto interessato.
 
 Dopo una breve manipolazione del nuovo df, si è salvato un csv, poi riutilizzabile in operazione future in altri ambienti.
+
+## Analisi
+
+Costruita una sessione spark definita ''LavoroFinale'' e caricate le librerie utili all'analisi, è stato importato il file csv precedentemente creato e trasformato contestualmente in un dataframe spark. Le variabili del df sono state poi tipizzate correttamente per agevolare l'analisi.
+
+Si è proseguita ad una prima analisi del dataframe individuandone le dimensioni, il numero reale di clienti ed il numero di operazioni rappresentate e all'individuazione di alcune statistiche descrittive.
+
+Riconvertito il df in pandas si è proseguito ad un'ulteriore manipolazione dello stesso volta all'esplorazione grafica delle variabili in seaborn e matplotlib.pyplot.
+
