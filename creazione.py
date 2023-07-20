@@ -114,8 +114,6 @@ def generaSaldi(num_numeri):
 
     Args:
         num_numeri (int): Il numero di numeri casuali da generare.
-        min_val (int): Il valore minimo incluso nel range.
-        max_val (int): Il valore massimo escluso dal range.
 
     Returns:
         list: Lista di numeri casuali.
@@ -136,7 +134,7 @@ def generaRegistro(data_precedente, saldo):
     Returns:
         registro_operazione (list) : lista contente [0, data operazione, descrizione operazione, somma spostata, saldo aggiornato]]
         """
-    giorni = random.randint(1,30)
+    giorni = random.randint(1,60)
     data_operazione = data_precedente + datetime.timedelta(days=giorni)
     lista_operazioni = ["prelievo", "deposito", "trasferimento", "ricevimento"]
     operazione = random.choice(lista_operazioni)

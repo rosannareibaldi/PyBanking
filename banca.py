@@ -127,7 +127,8 @@ class Utente:
         print(f"Operazione riuscita! Saldo attuale: {self.saldo}€\n")
 
     def stampaReport(self):
-        """ Stampa il saldo attuale e il report delle transazioni avvenute in precedenza
+        """ Stampa il saldo attuale, il report delle transazioni avvenute in precedenza e 
+        le entrate e le uscite dell'ultimo mese di utilizzo del conto
         """
         print(f"SALDO ATTUALE: {self.saldo}€\n")
         print("OPERAZIONI EFFETTUATE:\n")
