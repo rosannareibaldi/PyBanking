@@ -4,12 +4,12 @@
 - [Coding Rules](#coding-rules)
 - [Guida all'utilizzo](#guida-allutilizzo)
 - [Struttura dei files](struttura-dei-files)
-- [File main.py](file-main.py)
-- [File funzioni.py](file-funzioni.py)
-- [File banca.py](file-banca.py)
-- [File archivio.py](file-archivio.py)
-- [File creazione.py](file-archivio.py)
-- [File manipolazione.py](file-manipolazione.py)
+- [File main.py](file-main)
+- [File funzioni.py](file-funzioni)
+- [File banca.py](file-banca)
+- [File archivio.py](file-archivio)
+- [File creazione.py](file-archivio)
+- [File manipolazione.py](file-manipolazione)
 ## Coding rules
 ### Indentazione e formattazione
 Inserire righe vuote:
