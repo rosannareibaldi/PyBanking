@@ -125,8 +125,15 @@ def stampa_simulata(testo):
     print()  # Andare a capo dopo aver stampato tutto il testo
 
 def recuperoPassword(utente):
-    list_indovinelli = [["Ha i denti ma non mangia", "pettine"], ["Se sei in piedi sono sdraiati, se sei sdraiato sono in piedi", "piedi"], \
-                       ["lo vedi ma non lo puoi fotografare", "sogno"],["se lo nomini scompare", "silenzio"]]
+    list_indovinelli = [["Ha i denti ma non mangia", "pettine"],
+                        ["Se sei in piedi sono sdraiati, se sei sdraiato sono in piedi", "piedi"], 
+                        ["Lo vedi ma non lo puoi fotografare", "sogno"],
+                        ["Se lo nomini scompare", "silenzio"],
+                        ["Nasce grande e muore piccola", "candela"],
+                        ["Tu prima apri la porta e poi entri, lei prima entra e poi apre la porta", "chiave"], 
+                        ["Spesso si tuffa, ma raramente si bagna","portiere"],
+                        ["Più è nera più è pulita", "lavagna"]]
+    
     recupero = input("\nDigita 1 se vuoi riprovare\nDigita 2 se vuoi recuperare la password \n")
     if recupero == "2":
         print("\nRispondi al seguente indovinello:")
