@@ -258,7 +258,19 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 Sono stati creati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
+Per prima cosa sono stati definiti manualmente tre utenti e sono stati aggiunti alla `lista_utenti`.
+Per permettere poi la gestione di una maggiore quantità di dati sono stati generati 100 utenti prendendo random nome, cognome, data di nascita, indirizzo e numero di telefono. Inoltre è stato generato per ciascun utente un registro delle transazioni, contenente la creazione del conto con un importo random e una serie di operazioni (in numero random da 1 a 500) tra prelievo, trasferimento, deposito e ricevimento.
+In caso di prelievo o trasferimento sono state generate random somme di denaro inferiori al saldo presente nel momento della transazione.
+
+
 ## File creazione
+
+Il file creazione.py contiene le funzioni utilizzate nel file archivio.py per la generazione random delle variabili necessarie.
+
+In particolare nel caso di nome, cognome e indirizzo le funzioni pescano in maniera casuale da liste predefinite contenenti 30 elementi.
+La funzione `generaRegistro(data_precedente, saldo)` considera la data e il saldo relativi alla precedente operazione e genera il registro di un'operazione scelta casualmente tra prelievo, ricevimento, trasferimento e deposito, con le seguenti condizioni:
+- la data della nuova operazione deve essere successiva alla data dell'operazione precedente. In particolare la funzione prende una data random entro 60 giorni dall'operazione precedente;
+- in caso di prelievo o trasferimento la somma di denaro spostata deve essere inferiore alla somma di denaro presente sul conto.
 
 ## File manipolazione 
 
