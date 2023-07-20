@@ -1,5 +1,15 @@
 # PyBanking
 ---
+## Indice
+- [Coding Rules](#coding-rules)
+- [Guida all'utilizzo](#guida-allutilizzo)
+- [Struttura dei files](struttura-dei-files)
+- [File main.py](file-main.py)
+- [File funzioni.py](file-funzioni.py)
+- [File banca.py](file-banca.py)
+- [File archivio.py](file-archivio.py)
+- [File creazione.py](file-archivio.py)
+- [File manipolazione.py](file-manipolazione.py)
 ## Coding rules
 ### Indentazione e formattazione
 Inserire righe vuote:
@@ -66,7 +76,7 @@ L'operazione 'stampa report', permetterà all'utente di visualizzare un report c
 
 Durante l'inizializzazione di una delle cinque operazioni sovraelencate sarà possibile digitando 'menu' al posto dell'input richiesto di tornare al menù operativo dal quale si potrà inizializzare una nuova operazione. Similmente succederà se portata a termine una singola operazione.
 
-## STRUTTURA DEI FILE
+## STRUTTURA DEI FILES
 I file presenti sono i seguenti:
 - main.py : contiene il codice che descrive l'**interfaccia** utente;
 - funzioni.py : contiene alcune funzioni utilizzate nel *main*;
@@ -188,7 +198,7 @@ In particolare, all'interno della classe Utente, sono state definite **funzioni*
 
 ## File archivio.py
 
-Sono stati inseriti alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
+Sono stati creati alcuni utenti, con l'esecuzione di varie operazioni bancarie come depositi, prelievi, trasferimenti e generazione di rapporti delle transazioni e sono stati inseriti all'interno di una lista, chiamata `lista_utenti`.
 
 ## File manipolazione.py 
 
