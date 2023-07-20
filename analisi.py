@@ -27,8 +27,10 @@ df.printSchema()
 numero_righe=df.count()
 numero_colonne=len(df.columns)
 print(numero_righe,numero_colonne)
+
 #numero clienti
 numero_clienti=df.select('id').distinct().count()
+
 #quante volte sono state processate le singole operazioni dalla banca
 n_operazioni_tipo=df.groupBy('operazione').count()
 
@@ -46,21 +48,24 @@ stat_descrittive = df.groupBy('anno_operazioni').agg(mean(round(abs('variazione'
 stat_descrittive.show(10)
 
 
-#Ritorno in formato Pandas
+#Ritorno in formato Pandas, prima manipolazione
 df_pd= df.toPandas() 
 df_pd.drop('_c0',axis=1, inplace=True)
 df_pd.drop('num_telefono',axis=1, inplace=True)
 df_pd[['data_operazione','data_nascita','anno_nascita','anno_operazioni']].apply(pd.to_datetime)
+
+#colonna rappresentante la comulativa della variabile variazione
 df_pd['cum_variazione']=df_pd['variazione'].cumsum()
 
+## Visualizzazione- Attività della Banca
+#Analisi grafica
 sns.relplot(x='anno_operazioni',y='cum_variazione', data=df_pd,kind='line')
 plt.title('Evoluzione del valore totale dei depositi gestiti')
 plt.xlabel('Anno di esercizio')
 plt.ylabel('')
 
-#operazioni gestite per periodo
+#operazioni gestite per periodo, tramite soglia
 soglia= (df_pd['anno_operazioni'].max()) - int(input(''))
-
 df_10a =df_pd[df_pd['anno_operazioni']>=soglia]
 
 sns.countplot(data=df_10a,y='operazione')
@@ -73,6 +78,7 @@ plt.title('operazioni gestite nel periodo per anno di riferimeno')
 plt.xlabel('')
 plt.show()
 
+## Visualizzazione- Attività Clienti
 
 #indagine su singolo cliente
 id_analisi= int(input())
@@ -98,7 +104,7 @@ plt.xticks(rotation=90)
 plt.show()
 
 
-# Analisi per generazione con boxplot
+# Analisi comportamento per generazioni di clienti
 df_generazioni=df_pd
 
 def assegna_generazione(anno):
