@@ -8,7 +8,7 @@ import time
 
 # Stampa del messaggio di benvenuto
 funzioni.stampa_simulata("Ciao! Benvenuto nella banca PyBanking!\n")
-time.sleep(0.8)
+time.sleep(0.7)
 # Finestra operativa che consente all'utente di scegliere l'operazione da effettuare
 operazione = input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare \
 la registrazione \nDigita 3 se vuoi uscire \n")
@@ -146,20 +146,18 @@ Inserisci nuovo importo: ")
                                     utente_attuale.trasferisci(int(trasferimento))
                                     destinatario_attuale.ricevi(int(trasferimento))
 
-
                     # stampa del report
                     elif azione == "4":
                         funzioni.stampa_simulata("Hai scelto di stampare il report")
                         utente_attuale.stampaReport()
-
 
                     # uscita
                     elif azione == "5":
                         funzioni.stampa_simulata("Hai scelto di uscire.")
                         condizione_uscita = 1
                         operazione = "3"
-                        
-                    
+
+
     elif operazione == "2":
         funzioni.stampa_simulata("Benvenuto nella procedura di registrazione!\n")
 
@@ -208,8 +206,6 @@ Inserisci nuovo importo: ")
 l'accesso \nDigita 2 se vuoi effettuare una nuova registrazione \nDigita 3 se vuoi uscire \n")
 
 
-
-
     else:
         # Il valore inserito non corrisponde ad una scelta valida
         funzioni.stampa_simulata("Scelta non corretta\n")
@@ -219,4 +215,5 @@ la registrazione \nDigita 3 se vuoi uscire \n")
 
 
 if operazione == "3":
+    time.sleep(0.7)
     funzioni.stampa_simulata("Arrivederci!")
