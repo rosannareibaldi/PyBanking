@@ -115,7 +115,7 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
 	       Returns:
 		       num_telefono (str) : numero di telefono aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
 
- - Controlla se l'anno è in un formato corretto e in caso contrario
+ - Controllare se l'anno è in un formato corretto e in caso contrario
    chiede un nuovo inserimento
    
        def  controlloAnno(anno):
@@ -124,8 +124,8 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
    	    Returns:
    		    anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
 
- - Controlla se il mese è in un formato corretto e in caso contrario
-   chiede un nuovo inserimento
+ - Controllare se il mese è in un formato corretto e in caso contrario
+   chiedere un nuovo inserimento
    
        def  controlloMese(mese):
        Args:
@@ -135,8 +135,8 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
 
   
 
- - Controlla se il giorno è in un formato corretto e in caso contrario
-   chiede un nuovo inserimento. Controlla il giorno anche in base all'anno e al mese selezionati.
+ - Controllare se il giorno è in un formato corretto e in caso contrario
+   chiedree un nuovo inserimento. Controllare il giorno anche in base all'anno e al mese selezionati.
    
        def  controlloGiorno(giorno,mese,anno):
 	       Args:
@@ -149,10 +149,8 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
 ## File banca
 
 ### Caratteristiche  
- - Creazione di account utente con informazioni personali di base 
- - Generazione automatica di password casuali 
- - Operazioni di deposito e prelievo 
- - Tracciamento e generazione di rapporti delle transazioni
+Il file contiene la definizione della classe Utente, con informazioni personali di base.
+All'interno della classe sono presenti alcuni metodi che permettono la generazione di credenziali con password casuale, la gestione di alcune operazioni bancarie (deposito, prelievo,...) e il tracciamento e la generazione di rapporti delle transazioni effettuate dall'Utente.
 
 ### Codice
 
