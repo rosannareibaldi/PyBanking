@@ -173,15 +173,15 @@ I valori di saldo, registro delle transazioni e codice utente possono essere ins
 
 
 	Classe Utente:
-    Args:
-     	nome (str) : nome utente 
-   	 cognome (str) : cognome utente
-   	 data_nascita (datetime.date) : data nascita utente
-    	 indirizzo (str) : indirizzo utente
-   	  num_telefono (int) : numero di telefono utente
-    	 saldo (int) : saldo attuale,
+    	Args:
+     		nome (str) : nome utente 
+   		cognome (str) : cognome utente
+   		data_nascita (datetime.date) : data nascita utente
+    	indirizzo (str) : indirizzo utente
+   		num_telefono (int) : numero di telefono utente
+    	saldo (int) : saldo attuale,
 	     				default =0
-	     registro (matrix) : registro operazioni,
+	     	registro (matrix) : registro operazioni,
 							lista contenente liste del tipo [Id_utente (int), data operazione (datetime), nome operazione(str), operazione (int), saldo (int)],  
 							 default = [[0, data creazione conto, "creazione conto", 0, 0]]
 		 utente (int) : id utente,
