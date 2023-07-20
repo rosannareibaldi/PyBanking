@@ -126,7 +126,22 @@ def generaSaldi(num_numeri):
         numeri_casuali.append(numero)
     return numeri_casuali
 
+def generaRegistro(data_precedente, saldo):
+    giorni = random.randint(1,30)
+    data_operazione = data_precedente + datetime.timedelta(days=giorni)
+    lista_operazioni = ["prelievo", "deposito", "trasferimento", "ricevimento"]
+    operazione = random.choice(lista_operazioni)
 
+    if operazione == "prelievo" or operazione == "trasferimento":
+        somma = random.randint(0,saldo)
+        saldo -= somma   
+        registro_operazione = [0, data_operazione, operazione, -somma, saldo]
+    else:
+        somma = random.randint(1,10000)
+        saldo += somma 
+        registro_operazione = [0, data_operazione, operazione, somma, saldo]  
+
+    return registro_operazione
 
 
 
