@@ -53,7 +53,7 @@ class Utente:
         self.utente = numero_utenti + 1
         for i in range(len(self.registro)):
             self.registro[i][0] = self.utente
-        self.__password = generaPassword(5)
+        self.__password = generaPassword(8)
     
     def stampaCredenziali(self):
         """ Stampa le credenziali dell'Utente 

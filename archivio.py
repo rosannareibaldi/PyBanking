@@ -3,10 +3,14 @@ import banca
 import creazione
 import random
 
-# Creazione lista Utenti
+# CREAZIONE LISTA UTENTI
 lista_utenti = [] 
 
-# Utente 1
+
+## GENERAZIONE MANUALE DI 3 UTENTI
+
+# Utente1 
+# utente = 1, password = "passsword"
 data_nascita1 = datetime.date(1998, 12, 2)
 utente1 = banca.Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 3323458192,[[0, datetime.datetime(2023, 5, 20, 9, 13, 46, 63466), 'creazione conto', 0, 0],\
                                                                                      [0, datetime.datetime(2023, 5, 28, 9, 13, 46, 63466), 'deposito', 1000, 1000], \
@@ -14,10 +18,11 @@ utente1 = banca.Utente("Lucia", "Ferrari", data_nascita1, "via blabla", 33234581
                                                                                           [0, datetime.datetime(2023, 6, 12, 9, 13, 46, 63950), 'deposito', 20, 970], \
                                                                                             [0, datetime.datetime(2023, 7, 20, 9, 13, 46, 63950), 'prelievo', -200, 770]])
 utente1.creaCredenziali(len(lista_utenti))
-utente1.cambiaPassword("1234")
+utente1.cambiaPassword("password")
 lista_utenti.append(utente1)
 
 # Utente 2
+# utente = 2, password = "0000"
 data_nascita2 = datetime.date(1994, 10, 23)
 data_creazione2 = datetime.date(2020, 6, 9)
 data_prelievo1 = datetime.date(2020, 7, 18)
@@ -27,12 +32,16 @@ utente2.cambiaPassword("0000")
 lista_utenti.append(utente2)
 
 # Utente 3
+# utente = 3, password ="ciao"
 data_nascita3 = datetime.date(1997, 4, 12)
 data_creazione3 = datetime.date(2023, 3, 21)
 utente3 = banca.Utente("Leonardo", "Brunetti", data_nascita3, "via tal dei tali", 3240432570, 5000, [[0, data_creazione3, "creazione conto", 5000, 5000]])
 utente3.creaCredenziali(len(lista_utenti))
 utente3.cambiaPassword("ciao")
 lista_utenti.append(utente3)
+
+
+## GENERAZIONE RANDOM DI 100 UTENTI
 
 # Genero 100 nomi
 lista_nomi = creazione.generaNomiPropri(100)
@@ -69,5 +78,8 @@ for i in range(100):
     utente.creaCredenziali(len(lista_utenti))
     lista_utenti.append(utente)
 
-utente4 = lista_utenti[4]
-utente4.stampaReport()
+    # Per una questione dimostrativa, impostiamo una password identica per tutti, in modo da poter accedere dall'interfaccia. 
+    # Senza questo comando le password sono generate random in precedenza.
+    utente.cambiaPassword("1234") #Password = "1234"
+
+
