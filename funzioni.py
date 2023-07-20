@@ -1,6 +1,7 @@
 import banca
 import sys
 import time
+import random
 
 def chiedeCambiaPassword(utente):
     """ Chiede all'utente se desidera cambiare password e in caso affermativo modifica la password come richiesto dall'utente
@@ -123,4 +124,19 @@ def stampa_simulata(testo):
         time.sleep(0.02)  # Puoi regolare il tempo di pausa tra i caratteri qui
     print()  # Andare a capo dopo aver stampato tutto il testo
 
+def recuperoPassword(utente):
+    list_indovinelli = [["Ha i denti ma non mangia", "pettine"], ["Se sei in piedi sono sdraiati, se sei sdraiato sono in piedi", "piedi"], \
+                       ["lo vedi ma non lo puoi fotografare", "sogno"],["se lo nomini scompare", "silenzio"]]
+    recupero = input("\nDigita 1 se vuoi riprovare\nDigita 2 se vuoi recuperare la password \n")
+    if recupero == "2":
+        print("\nRispondi al seguente indovinello:")
+        indice = random.randint(0,len(list_indovinelli)-1)
+        indovinello = list_indovinelli[indice][0]
+        risposta = input(f"{indovinello}. \n").lower()
+        if risposta == list_indovinelli[indice][1]:
+            print("Corretto!")
+            nuova_password = input("Nuova password: ")
+            utente.cambiaPassword(nuova_password)
+        else:
+            print("Recupero password fallito.")
 

@@ -32,7 +32,7 @@ effettuare la registrazione \nDigita 3 se vuoi uscire \n")
                 # Verifica dell'esistenza del codice utente nell'archivio della banca
                 utente_trovato = 0
                 for i in range(len(lista_utenti)):
-                    if int(utente) == lista_utenti[i].utente:
+                    if utente.isdigit() and int(utente) == lista_utenti[i].utente:
                         utente_trovato = 1  # variabile di controllo
                         funzioni.stampa_simulata("Codice utente esistente.\n")
                         check_utente = 1
@@ -58,6 +58,8 @@ registrarti!\n")
                 check_password = utente_attuale.passwordCorretta(password)
                 if check_password == 0:
                     print(f"Password errata! Tentativi rimasti {3-numero_tentativi}")
+                    if numero_tentativi != 3:
+                        funzioni.recuperoPassword(utente_attuale)
             
             # Esauriti i tre tentativi per l'inserimento della password, l'esecuzione viene interrotta.
             if numero_tentativi == 3 and check_password == 0:
