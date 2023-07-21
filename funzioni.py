@@ -148,13 +148,24 @@ def controlloProvincia(provincia):
 
 
 def stampa_simulata(testo):
+    """ 
+    Stampa a display un carattere alla volta con un delay di 0.02 secondi
+    Args: 
+        testo (str) : testo da stampare
+    """
     for carattere in testo:
         sys.stdout.write(carattere)
         sys.stdout.flush()
         time.sleep(0.02)  # Puoi regolare il tempo di pausa tra i caratteri qui
     print()  # Andare a capo dopo aver stampato tutto il testo
 
+
 def recuperoPassword(utente):
+    """
+    Pone un indovinello all'utente e in caso di risposta corretta chiede di inserire una nuova password
+    Args:
+        utente : oggetto della classe utente
+    """
     list_indovinelli = [["Ha i denti ma non mangia", "pettine"],
                         ["Se sei in piedi sono sdraiati, se sei sdraiato sono in piedi", "piedi"], 
                         ["Lo vedi ma non lo puoi fotografare", "sogno"],
