@@ -17,7 +17,7 @@ def generaPassword(lunghezza):
 
 
 class Utente:
-    def __init__(self, nome, cognome, data_nascita, indirizzo, num_telefono, saldo = 0, \
+    def __init__(self, nome, cognome, data_nascita, indirizzo, provincia, num_telefono, saldo = 0, \
                  registro = None, utente = 0):
         """Classe Utente:
         Args:
@@ -40,6 +40,7 @@ class Utente:
         self.cognome = cognome
         self.data_nascita = data_nascita
         self.indirizzo = indirizzo
+        self.provincia = provincia
         self.num_telefono = num_telefono
         self.saldo = saldo
         self.registro = registro

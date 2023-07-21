@@ -116,6 +116,36 @@ def controlloGiorno(giorno,mese,anno):
             controlloGiorno(giorno,mese,anno)       
     return giorno
 
+def controlloProvincia(provincia):
+    """ Controlla se la provincia è in un formato corretto e in caso contrario chiede un nuovo inserimento
+    Args:
+        anno (str) : anno inserito dall'utente
+    Returns:
+        anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+    """
+    lista_province = [
+    'agrigento', 'alessandria', 'ancona', 'aosta', 'arezzo', 'ascoli Piceno',
+    'asti', 'avellino', 'bari', 'barletta-andria-trani', 'belluno', 'benevento',
+    'bergamo', 'biella', 'bologna', 'bolzano', 'brescia', 'brindisi', 'cagliari',
+    'caltanissetta', 'campobasso', 'carbonia-Iglesias', 'caserta', 'catania',
+    'catanzaro', 'chieti', 'como', 'cosenza', 'cremona', 'crotone', 'cuneo',
+    'enna', 'fermo', 'ferrara', 'firenze', 'foggia', 'forlì-cesena', 'frosinone',
+    'genova', 'gorizia', 'grosseto', 'imperia', 'isernia', 'la spezia', 'latina',
+    'lecce', 'lecco', 'livorno', 'lodi', 'lucca', 'macerata', 'mantova', 'massa-carrara',
+    'matera', 'messina', 'milano', 'modena', 'monza e della brianza', 'napoli', 'novara',
+    'nuoro', 'ogliastra', 'olbia-Tempio', 'oristano', 'padova', 'palermo', 'parma', 'pavia',
+    'perugia', 'pesaro e Urbino', 'pescara', 'piacenza', 'pisa', 'pistoia', 'pordenone',
+    'potenza', 'prato', 'ragusa', 'ravenna', 'reggio calabria', 'reggio emilia', 'rieti',
+    'rimini', 'roma', 'rovigo', 'salerno', 'medio campidano', 'sassari', 'savona', 'siena',
+    'siracusa', 'sondrio', 'taranto', 'teramo', 'terni', 'torino', 'ogliastra', 'trapani',
+    'trento', 'treviso', 'trieste', 'udine', 'varese', 'venezia', 'verbano-cusio-ossola',
+    'vercelli', 'verona', 'vibo valentia', 'vicenza', 'viterbo']
+    if not provincia.lower() in lista_province:
+        print("Formato non corretto. Inserire la provincia per intero.\n")
+        provincia = input ("Inserisci la tua provincia: ")
+        controlloProvincia(provincia)
+    return provincia
+
 
 def stampa_simulata(testo):
     for carattere in testo:

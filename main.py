@@ -189,12 +189,16 @@ Inserisci nuovo importo: ")
         # Inserimento dell'indirizzo
         indirizzo = input("Inserisci il tuo indirizzo: ")
 
+        # Inserimento della provincia
+        provincia = input("Inserisci la tua provincia: ")
+        provincia = funzioni.controlloProvincia(provincia)
+
         # Inserimento e controllo del numero di telefono
         num_telefono = input("Inserisci il tuo numero di telefono: ")
         num_telefono = funzioni.controlloNumero(num_telefono)
         
         # Creazione credenziali utente e registrazione nell'archivio della banca
-        nuovo_utente = banca.Utente(nome, cognome, data_nascita, indirizzo, num_telefono)
+        nuovo_utente = banca.Utente(nome, cognome, data_nascita, indirizzo, provincia, num_telefono)
         numero_utenti = len(lista_utenti)
         nuovo_utente.creaCredenziali(numero_utenti)
         lista_utenti.append(nuovo_utente)
