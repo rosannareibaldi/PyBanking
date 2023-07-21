@@ -119,9 +119,9 @@ def controlloGiorno(giorno,mese,anno):
 def controlloProvincia(provincia):
     """ Controlla se la provincia è in un formato corretto e in caso contrario chiede un nuovo inserimento
     Args:
-        anno (str) : anno inserito dall'utente
+        provincia (str) : provincia inserito dall'utente
     Returns:
-        anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
+        provincia (str) : provincia aggiornata dall'utente se aveva precedentemento inserito un formato sbagliato
     """
     lista_province = [
     'agrigento', 'alessandria', 'ancona', 'aosta', 'arezzo', 'ascoli piceno',
