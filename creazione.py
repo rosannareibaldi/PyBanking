@@ -134,7 +134,7 @@ def generaRegistro(data_precedente, saldo):
     Returns:
         registro_operazione (list) : lista contente [0, data operazione, descrizione operazione, somma spostata, saldo aggiornato]]
         """
-    giorni = random.randint(1,60)
+    giorni = random.randint(1,7)
     data_operazione = data_precedente + datetime.timedelta(days=giorni)
     lista_operazioni = ["prelievo", "deposito", "trasferimento", "ricevimento"]
     operazione = random.choice(lista_operazioni)
