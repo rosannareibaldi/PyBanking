@@ -59,10 +59,11 @@ Inizializzando il programma verrà stampato il messaggio di benvenuto:
 che consente all'utente di eseguire, tramite input tre differenti interazioni con il programma.
 Digitando 1 si proseguirà all'accesso tramite autenticazione, digitando 2 si permetterà ai nuovi utenti di effettuare la registrazione, digitando 3 si effettuerà il log out della sessione.L'inserimento di valori non consentiti genererà un messagio di errore.
 
-La registrazione(attivata dalla digitazione:2) richiederà al nuovo utilizzatore di inserire alcuni suoi dati personali: il 'Nome', il 'Cognome', l' 'Indirizzo', il 'Numero di telefono',
+La registrazione(attivata dalla digitazione:2) richiederà al nuovo utilizzatore di inserire alcuni suoi dati personali: il 'Nome', il 'Cognome', l' 'Indirizzo', la 'Provincia', il 'Numero di telefono',
 e la data di nascita individuando speratamente 'Giorno', 'Mese', 'Anno'. L'inserimento di tali valori, se eseguito correttamente permetterà all'utente di registrarsi all'interno del registro della banca, e di ricevere il proprio 'Utente' e la propria 'Password' poi necessari ad effettuare l'identificazione e l'accesso al terminale. Successivamente l'utente sarà ricondotto automaticamente alla finestra operativa principale.
 
-Eseguendo l'accesso (attivato dalla digitazione:1) dall'interno del terminale il programma richiederà di inserire il proprio 'Utente' e la 'Password' con l'opzione di tornare alla schermata principale digitando 'INDIETRO'. Inserito un 'Utente' valido, l'utilizzatore avrà tre tentativi per per inserire la 'Password' corretta, nel caso in cui non si inserisse la password corretta l'utente verrebbe disabilitato. In caso l'Utente' inserito non fosse valido verrà generato un messaggio di errore e verrà richiesto nuovamente di inserire un 'Utente valido'. 
+Eseguendo l'accesso (attivato dalla digitazione:1) dall'interno del terminale il programma richiederà di inserire il proprio 'Utente' e la 'Password' con l'opzione di tornare alla schermata principale digitando 'INDIETRO'. Inserito un 'Utente' valido, l'utilizzatore avrà tre tentativi per per inserire la 'Password' corretta, nel caso in cui non si inserisse la password corretta l'utente verrebbe disabilitato. In caso l'Utente' inserito non fosse valido verrà generato un messaggio di errore e verrà richiesto nuovamente di inserire un 'Utente valido'.
+In caso di 'Password' non valida viene richiesto all'Utente se desidera riprovare o recuperare la password; nell'ultimo caso viene posto un indovinello e se la risposta è corretta si può impostare una nuova password.
 L'inserimento di credenziali valide permetterà al programma di aprire un ulteriore menù, il quale tramite input permetterà all'utente di effettuare diversi tipi di operazioni: il 'deposito' (attivabile digitando: 1), il 'prelievo (attivabile digitando: 2)', il 'trasferimento' (attivabile digitando: 3), la 'stampa report'(attivabile digitando: 4) ed 'esci'(attivabile digitando: 5) che permetterà di interrompere la sessione.
 
 L'operazione 'deposito', richiederà di inserire tramite input la somma numerica che si vuole depositare, l'inserimento di valori errati ritornerà un messaggio di errore, contrariamente, inserita una cifra valida il programma aggiornerà il 'saldo' dell'utente e stamperà un messaggio contenente la notizia di operazione avvenuta e il saldo post operazione.
@@ -147,6 +148,20 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
 	       Returns:
 		       giorno (str) : giorno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
 
+ - Porre un indovinello all'utente e in caso di risposta corretta chiede
+   di inserire una nuova password
+   
+       def  recuperoPassword(utente):
+   	    Args:
+   		    utente : oggetto della classe utente
+ - Stampare a display un carattere alla volta con un delay di 0.02
+   secondi
+   
+       def  stampa_simulata(testo):
+   	    Args:
+   		    testo (str) : testo da stampare
+
+
 ## File banca
 
 ### Caratteristiche  
@@ -167,7 +182,7 @@ All'interno della classe sono presenti alcuni metodi che permettono la generazio
 Creazione della **classe Utente** per la gestione degli account utente;
 
          class  Utente: 	  
-        def  __init__(self, nome, cognome, data_nascita, indirizzo, num_telefono, saldo  =  0, registro  =  None, utente  =  0):
+        def  __init__(self, nome, cognome, data_nascita, indirizzo, provincia, num_telefono, saldo  =  0, registro  =  None, utente  =  0):
 
 *Permette la creazione di oggetti Utenti inserendo nome, cognome, data di nascita, indirizzo e numero di telefono. 
 I valori di saldo, registro delle transazioni e codice utente possono essere inseriti nel momento della creazione, altrimenti di default il saldo è nullo, il registro è vuoto e il codice utente è 0.*
@@ -179,6 +194,7 @@ I valori di saldo, registro delle transazioni e codice utente possono essere ins
    		cognome (str) : cognome utente
    		data_nascita (datetime.date) : data nascita utente
     	indirizzo (str) : indirizzo utente
+     	provincia (str) : provincia utente
    		num_telefono (int) : numero di telefono utente
     	saldo (int) : saldo attuale,
 	     				default =0
