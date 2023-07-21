@@ -73,6 +73,7 @@ Quando l'utente sceglie la procedura di registrazione, ovvero `operazione = "2"`
  - anno di nascita nel formato *AAAA*,
  -  mese e giorno di nascita senza digitare lo zero iniziale nel caso di una singola cifra,
  - indirizzo,
+ - provincia,
  - numero di telefono, nel formato a 10 cifre.
 
 Vengono così create le credenziali e l'utente viene registrato nell'archivio della banca. Al termine della procedura di registrazione, viene fornita all'utente la possibilità di effettuare il cambio password e viene visualizzata la pagina operativa principale per effettuare la scelta dell'operazione da effettuare.
