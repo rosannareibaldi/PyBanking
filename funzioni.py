@@ -124,7 +124,7 @@ def controlloProvincia(provincia):
         anno (str) : anno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
     """
     lista_province = [
-    'agrigento', 'alessandria', 'ancona', 'aosta', 'arezzo', 'ascoli Piceno',
+    'agrigento', 'alessandria', 'ancona', 'aosta', 'arezzo', 'ascoli piceno',
     'asti', 'avellino', 'bari', 'barletta-andria-trani', 'belluno', 'benevento',
     'bergamo', 'biella', 'bologna', 'bolzano', 'brescia', 'brindisi', 'cagliari',
     'caltanissetta', 'campobasso', 'carbonia-Iglesias', 'caserta', 'catania',
