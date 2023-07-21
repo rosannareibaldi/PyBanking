@@ -143,7 +143,7 @@ Il file contiene alcune funzioni utilizzate nel *main* che permettono di:
        def  controlloGiorno(giorno,mese,anno):
 	       Args:
 		       giorno (str) : giorno inserito dall'utente
-	       mese (str) : mese inserito dall'utente
+	       	mese (str) : mese inserito dall'utente
 		       anno (str) : anno inserito dall'utente
 	       Returns:
 		       giorno (str) : giorno aggiornato dall'utente se aveva precedentemento inserito un formato sbagliato
@@ -191,17 +191,17 @@ I valori di saldo, registro delle transazioni e codice utente possono essere ins
 	Classe Utente:
     	Args:
      		nome (str) : nome utente 
-   		cognome (str) : cognome utente
-   		data_nascita (datetime.date) : data nascita utente
-    	indirizzo (str) : indirizzo utente
-     	provincia (str) : provincia utente
-   		num_telefono (int) : numero di telefono utente
-    	saldo (int) : saldo attuale,
+   			cognome (str) : cognome utente
+   			data_nascita (datetime.date) : data nascita utente
+    		indirizzo (str) : indirizzo utente
+     		provincia (str) : provincia utente
+   			num_telefono (int) : numero di telefono utente
+    		saldo (int) : saldo attuale,
 	     				default =0
-	     	registro (matrix) : registro operazioni,
+	     		registro (matrix) : registro operazioni,
 							lista contenente liste del tipo [Id_utente (int), data operazione (datetime), nome operazione(str), operazione (int), saldo (int)],  
 							 default = [[0, data creazione conto, "creazione conto", 0, 0]]
-		 utente (int) : id utente,
+		 	utente (int) : id utente,
 						default = 0
 
 All'interno della classe sono presenti inoltre le definizione di funzioni che permettano la gestione delle credenziali e di alcune operazioni bancarie e  stampa del report contenente le transazioni avvenute. 
