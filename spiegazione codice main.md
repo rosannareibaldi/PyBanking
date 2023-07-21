@@ -1,4 +1,4 @@
-Il codice inizia caricando i files esterni necessari alla corretta esecuzione del programma, ovvero `datetime`, `banca`, `funzioni` e `lista_utenti` da `archivio`.
+Il codice inizia caricando i files esterni necessari alla corretta esecuzione del programma, ovvero `datetime`, `getpass`, `time`, `banca`, `funzioni` e `lista_utenti` da `archivio`.
 
 Dopo aver stampato il messaggio di benvenuto, viene visualizzata la finestra operativa che consente all'utente di scegliere l'operazione da effettuare, digitando:
 
@@ -14,7 +14,7 @@ Questa finestra operativa viene stampata al completamento di ogni operazione, a 
 	    elif  operazione  ==  "2":
 		    ...
 	    else:
-		    print("Scelta non corretta")
+		    funzioni.stampa_simulata("Scelta non corretta\n")
 		    operazione  =  input("Digita 1 se vuoi eseguire l'accesso \nDigita 2 se vuoi effettuare \
 		    la registrazione \nDigita 3 se vuoi uscire \n")
     
@@ -37,9 +37,9 @@ Se l'utente esprime la volontà di ritornare indietro, ovvero `utente.lower() ==
 
     utente_trovato  =  0
     for  i  in  range(len(lista_utenti)):
-	    if  int(utente) ==  lista_utenti[i].utente:
+	    if  iutente.isdigit() and  int(utente) ==  lista_utenti[i].utente:
 		    utente_trovato  =  1
-			print("Codice utente esistente.")
+			funzioni.stampa_simulata("Codice utente esistente.\n")
 			check_utente  =  1
 			utente_attuale  =  lista_utenti[i]
 			break
@@ -47,7 +47,7 @@ Se l'utente esprime la volontà di ritornare indietro, ovvero `utente.lower() ==
 Se la verifica va a buon fine, ovvero `utente_trovato = 1`, il codice utente viene memorizzato in `utente_attuale`. In caso contrario, ovvero `utente_trovato = 0`, è possibile inserire un nuovo codice utente oppure tornare indietro per effettuare la registrazione:
 
     if  utente_trovato  ==  0:
-    print("Codice utente non presente nel registro. Riprova oppure torna indietro per \
+    funzioni.stampa_simulata("Codice utente non presente nel registro. Riprova oppure torna indietro per \
     registrarti!")
     check_utente  =  0
 
@@ -77,3 +77,4 @@ Quando l'utente sceglie la procedura di registrazione, ovvero `operazione = "2"`
  - numero di telefono, nel formato a 10 cifre.
 
 Vengono così create le credenziali e l'utente viene registrato nell'archivio della banca. Al termine della procedura di registrazione, viene fornita all'utente la possibilità di effettuare il cambio password e viene visualizzata la pagina operativa principale per effettuare la scelta dell'operazione da effettuare.
+ 
